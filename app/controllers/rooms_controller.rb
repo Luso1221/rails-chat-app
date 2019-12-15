@@ -40,14 +40,16 @@ class RoomsController < ApplicationController
   def load_entities
     @rooms = Room.all
     @room = Room.find(params[:id]) if params[:id]
+    puts "AAA"
   end
 
   def permitted_parameters
     params.require(:room).permit(:name)
   end
-
+  
   def show
     @room_message = RoomMessage.new room: @room
     @room_messages = @room.room_messages.includes(:user)
+    render :layout => nil
   end
 end

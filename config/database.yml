@@ -1,7 +1,8 @@
 development:
   adapter: postgresql
   host: localhost
-  username: user
+  username: postgres
+  password: root
   database: app-dev
 
 test:
