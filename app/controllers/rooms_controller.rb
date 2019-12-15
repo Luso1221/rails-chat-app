@@ -41,8 +41,6 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @room = Room.find(params[:id]) if params[:id]
     show
-    # puts @room_messages.to_s()+" message"
-    # puts "AAA"
   end
 
   def permitted_parameters
@@ -51,6 +49,8 @@ class RoomsController < ApplicationController
   
   def show
     @room_message = RoomMessage.new room: @room
-    @room_messages = @room.room_messages.includes(:user)
+    if defined?(@room.room_messages)
+      @room_messages = @room.room_messages.includes(:user)
+    end
   end
 end
