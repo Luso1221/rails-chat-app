@@ -1,17 +1,25 @@
 development:
-  adapter: postgre
+  adapter: postgresql
   database: mydb_dev
   pool: 5
   timeout: 5000
+  host: localhost
+  username: postgres
+  password: root
+  port: 5432
 
 test:
-  adapter: postgre
+  adapter: postgresql
   database: mydb_test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: root
 
 production:
-  adapter: postgre
+  adapter: postgresql
   database: mydb_prod
   pool: 5
   timeout: 5000
+  username: postgres
+  password: root
